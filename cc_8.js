@@ -84,3 +84,22 @@ function calculateRentalCost(days, carType, insurance = false) {
 console.log(calculateRentalCost(3, "Economy", true));  // Expected output: "Total Rental Cost: $180"
 console.log(calculateRentalCost(5, "Luxury", false));  // Expected output: "Total Rental Cost: $500"
 console.log(calculateRentalCost(2, "Standard", true)); // Expected output: "Total Rental Cost: $160"
+
+
+//Task 5: Returning Values
+
+//Function to calculate total loan payment
+function calculateLoanPayment(principal, rate, time) {
+    //1st: Calculate the interest
+    let interest = principal * rate * time;
+
+    //2nd: Compute total payment
+    let totalPayment = principal + interest;
+
+    //3rd: Format and return the result
+    return `Total Payment: $${totalPayment.toFixed(2)}`;
+}
+
+//Test data
+console.log(calculateLoanPayment(1000, 0.05, 2));  // Expected output: "Total Payment: $1100.00"
+console.log(calculateLoanPayment(5000, 0.07, 3));  // Expected output: "Total Payment: $6050.00"
