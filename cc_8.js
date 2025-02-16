@@ -121,3 +121,25 @@ let largeTransactions = filterLargeTransactions(transactions, amount => amount >
 
 //4th: Print the result
 console.log(largeTransactions); // Expected output: [1500, 3200, 2500]
+
+
+//Task 7: Closures
+
+//1st: Define the createCartTracker function
+function createCartTracker() {
+    let total = 0; // This variable remembers the running total
+
+    //2nd: Return an inner function that adds to the total
+    return function (amount) {
+        total += amount; // Add the new amount to total
+        return `Total Cart Value: $${total}`;
+    };
+}
+
+//3rd: Create a new cart tracker
+let cart = createCartTracker();
+
+//4th: Test the function by adding items
+console.log(cart(20)); // Expected output: "Total Cart Value: $20"
+console.log(cart(35)); // Expected output: "Total Cart Value: $55"
+console.log(cart(15)); // Expected output: "Total Cart Value: $70"
